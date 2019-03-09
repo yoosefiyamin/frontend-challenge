@@ -2,7 +2,7 @@
   "name": "frontend-challenge",
   "version": "1.0.0",
   "description": "Sheypoor frontend challenge",
-  "main": "index.js",
+  "main": "sdk/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/sheypoor/frontend-challenge.git"
   },
-  "author": "Saeed Seyfi <me@saeedseyfi.com> (http://saeedseyfi.com)",
+  "author": "Pendar Safari <pendar.safari@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sheypoor/frontend-challenge/issues"

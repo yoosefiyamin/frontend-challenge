@@ -36,10 +36,6 @@ Feel free to use any other helper library although ideally the more code you wri
 - use either vanilla Javascript or one of the frameworks we use at Sheypoor(React / Knockout.js) or whatever you like
 - use npm to manage dependencies, there is pre-initialized package.json included in this repo
 
-### Feel free to:
-- use [create-react-app](https://github.com/facebookincubator/create-react-app) or webpack as a build tool
-- use a statically typed language like Typescript or simply [flowtype](https://flowtype.org/)
-
 ### Getting started:
 
 - Fork the repo

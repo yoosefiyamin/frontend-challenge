@@ -28,18 +28,22 @@ function loadData() {
       title: "\u06F2\u06F0\u06F1\u06F8\u066C \u0647\u06CC\u062F\u0648\u0646\u062F\u0627\u06CC\u066C \u0633\u0627\u0646\u062A\u0627\u0641\u0647 (".concat(Math.random().toString(36).substring(7), ")"),
       image: Math.ceil(Math.random() * 3) + ".png",
       price: {
-        "slug": "price",
-        "value": Math.floor(Math.random() * 90071992547),
-        "unit": "تومان"
+        slug: "price",
+        value: Math.floor(Math.random() * 90071992547),
+        unit: "تومان"
       },
       created_at: 1555235671000
     };
   }
 
-  return {
-    total: 2000,
-    size: 20,
-    skipped: skipped + size,
-    items: items
-  };
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      return resolve({
+        total: 2000,
+        size: 20,
+        skipped: skipped + size,
+        items: items
+      });
+    }, 3000);
+  });
 }

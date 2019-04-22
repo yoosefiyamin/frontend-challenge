@@ -30,6 +30,10 @@ Response example
 
 The focus should be on code style and the way you approach the problem implementation wise.
 
+### Implementation requirements:
+
+- App should be optimize for rendering  for large list
+
 ### Getting started:
 
 - Fork the repo

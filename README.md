@@ -34,7 +34,7 @@ The focus should be on code style and the way you approach the problem implement
 
 - Fork the repo
 - Implement your solution
-- Send android apk file android and repository url to pendar.safari@gmail.com
+- Send android apk file and repository url to pendar.safari@gmail.com
 
 Please provide detailed instructions
 on how to start the project locally.

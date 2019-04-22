@@ -34,7 +34,7 @@ export default function loadData({ skipped = 0, size = 20 } = {}) {
           resolve({
             total: 2000,
             size: 20,
-            skipped: skipped + size,
+            skipped,
             items
           }),
         3000

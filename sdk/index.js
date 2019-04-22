@@ -41,7 +41,7 @@ function loadData() {
       return resolve({
         total: 2000,
         size: 20,
-        skipped: skipped + size,
+        skipped: skipped,
         items: items
       });
     }, 3000);

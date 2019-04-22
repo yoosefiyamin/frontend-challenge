@@ -32,7 +32,7 @@ The focus should be on code style and the way you approach the problem implement
 
 ### Implementation requirements:
 
-- App should be optimize for rendering  for large list
+- The app should be optimized for rendering  for a large list
 
 ### Getting started:
 

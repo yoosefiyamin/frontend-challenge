@@ -29,7 +29,7 @@
               <input type="number" id="age" name="age" placeholder="Your age ..." min="18" data-bind="textInput: age">
             </div>
           </div>
-          <div class="stepnav row" data-bind="template: { name: 'button-template', data: $root }"></div>
+          <div class="row" data-bind="template: { name: 'button-template' }"></div>
         </div>
         <div class="step" data-bind="visible: step()==2">
           <div class="row">
@@ -37,7 +37,7 @@
               <label for="email">Email</label>
             </div>
             <div class="row-input">
-              <input type="text" id="email" placeholder="sample@gmail.com" data-bind="textInput: email">
+              <input type="email" id="email" placeholder="sample@gmail.com" data-bind="textInput: email">
             </div>
           </div>
           <div class="row">
@@ -48,16 +48,16 @@
               <select data-bind="options: newsletterTypes, value: newsletter"></select>
             </div>
           </div>
-          <div class="stepnav row" data-bind="template: { name: 'button-template', data: $root }"></div>
+          <div class="row" data-bind="template: { name: 'button-template' }"></div>
         </div>
         <!-- success component -->
          <success></success>
       </form>
     </div>
     <script type="text/html" id="button-template">
-            <button data-bind="click: prev, visible: step()>1" class="prevBtn">Prev</button>
-            <button data-bind="click: next, visible: step()<steps, enable: step1IsValid" class="btn-success">Next</button>
-            <button data-bind="click: submit, visible: step()==steps,,enable:step2IsValid" class="btn-success">Submit</button>
+      <button data-bind="click: prev, visible: step()>1" class="prevBtn">Prev</button>
+      <button data-bind="click: next, visible: step()<steps, enable: step1IsValid" class="btn-success">Next</button>
+      <button data-bind="click: submit, visible: step()==steps,,enable:step2IsValid" class="btn-success">Submit</button>
     </script>
     <script src="app.js"></script>
 </body>

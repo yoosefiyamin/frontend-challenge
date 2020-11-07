@@ -1,11 +1,9 @@
-var ko = require("knockout");
-var createUser = require("../../sdk");
-var validations = require("../../app/js/validations");
+var ko = require('knockout');
+var createUser = require('../../sdk');
 var components = require('../components');
-var NewsLetterType = require("./selectOptions");
+var NewsLetterType = require('./selectOptions');
 
 
-ko.extenders.required = validations.required;
 ko.components.register('success', components.successForm);
 
 function viewModel (data) {
@@ -26,28 +24,17 @@ function viewModel (data) {
     this.submiting = ko.observable(false);
     this.newsletter = ko.observable(NewsLetterType[0]);
 
-    this.userName = ko.observable("").extend({
-        required: "Name is required"
-    });
-
-    this.age = ko.observable("").extend({
-        numeric: "Age must be a number",
-        required: "Age is required",
-    });
-
-    this.email = ko.observable("").extend({
-        email: "Email is not valid",
-        required: "Email is required",
-    });
+    this.userName = ko.observable('');
+    this.age = ko.observable('');
+    this.email = ko.observable('');
 
     this.step1IsValid = ko.computed(function () {
-        console.log(this.userName.error())
-        return !(this.userName.error() || this.age.error());
+        return (this.userName() && this.age());
     }, this);
 
     this.step2IsValid = ko.computed(function () {
         
-        return this.step1IsValid && !this.email.error();
+        return this.step1IsValid && this.email();
     }, this);
     
     this.next = function() {
@@ -68,10 +55,9 @@ function viewModel (data) {
 
         createUser(data).then(function (res) {
             console.log('your info', res);
-            document.getElementById("success").innerHTML= 'Thanks for filling out our form!'
+            document.getElementById('success').innerHTML= 'Thanks for filling out our form!'
         }, function (error) {
-            console.log(error);
-            alert("Error");
+            alert('Error');
         });
     }
 }

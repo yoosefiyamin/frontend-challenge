@@ -2,10 +2,11 @@
   "name": "frontend-challenge",
   "version": "1.0.0",
   "description": "Sheypoor frontend challenge",
-  "main": "sdk/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp watch"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sheypoor/frontend-challenge.git"
@@ -16,7 +17,23 @@
     "url": "https://github.com/sheypoor/frontend-challenge/issues"
   },
   "homepage": "https://github.com/sheypoor/frontend-challenge#readme",
+
   "dependencies": {
+    "knockout": "^3.5.1",
     "sdk": "file:sdk"
+  },
+
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "browserify": "^17.0.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^3.0.2",
+    "stringify": "^5.2.0",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

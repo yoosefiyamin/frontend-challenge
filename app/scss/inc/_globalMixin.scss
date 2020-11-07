@@ -1,0 +1,9 @@
+﻿
+@mixin text-overflow($optiopn) {
+          -ms-text-overflow: $optiopn;
+            -o-text-overflow: $optiopn;
+            text-overflow: $optiopn;
+}
+
+
+

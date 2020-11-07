@@ -1,0 +1,51 @@
+﻿html {
+  font-size: 21px;
+  height: 100%;
+}
+
+body {
+  font-size: 20px;
+  font-weight: 200;
+  text-align: right;
+  position: relative;
+  background-color: #0D1117;
+  overflow-y:auto;
+  height:100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover, &.selected {
+    box-shadow: 0 0 0 3px #00bffa;
+    border: none medium;
+  }
+
+  &:focus, &:visited, &:active, &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+input[type=text], input[type=number],input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+

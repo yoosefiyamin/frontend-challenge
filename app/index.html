@@ -12,25 +12,9 @@
 <body>
     <div class="container">
       <form id='Form'>
-        <div data-bind="visible: step()==1">
-          <div class="row">
-            <div class="row-label">
-              <label for="name">Full Name</label>
-            </div>
-            <div class="row-input">
-              <input type="text" id="name" data-bind="textInput: userName" placeholder="Your fullname..."/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="row-label">
-              <label for="age">age</label>
-            </div>
-            <div class="row-input">
-              <input type="number" id="age" name="age" placeholder="Your age ..." min="18" data-bind="textInput: age">
-            </div>
-          </div>
-          <div class="row" data-bind="template: { name: 'button-template' }"></div>
-        </div>
+        <step-one data-bind="visible: (step() == 1)"
+        params="userName: userName, age:age, step1IsValid:step1IsValid, nextStep:nextStep">
+      </step-one>
         <div class="step" data-bind="visible: step()==2">
           <div class="row">
             <div class="row-label">
@@ -48,16 +32,17 @@
               <select data-bind="options: newsletterTypes, value: newsletter"></select>
             </div>
           </div>
-          <div class="row" data-bind="template: { name: 'button-template' }"></div>
+          <button data-bind="click: submit, visible: step()==steps,,enable:step2IsValid" class="btn-success">Submit</button> 
+          <button data-bind="click: prev, visible: step()>1" class="prevBtn">Prev</button>
         </div>
         <!-- success component -->
          <success></success>
       </form>
     </div>
     <script type="text/html" id="button-template">
-      <button data-bind="click: prev, visible: step()>1" class="prevBtn">Prev</button>
-      <button data-bind="click: next, visible: step()<steps, enable: step1IsValid" class="btn-success">Next</button>
-      <button data-bind="click: submit, visible: step()==steps,,enable:step2IsValid" class="btn-success">Submit</button>
+      <!-- <button data-bind="click: prev, visible: step()>1" class="prevBtn">Prev</button> -->
+      <!-- <button data-bind="click: next, visible: step()<steps, enable: step1IsValid" class="btn-success">Next</button> -->
+      <!-- <button data-bind="click: submit, visible: step()==steps,,enable:step2IsValid" class="btn-success">Submit</button> -->
     </script>
     <script src="app.js"></script>
 </body>

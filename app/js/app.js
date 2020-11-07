@@ -5,14 +5,15 @@ var NewsLetterType = require('./selectOptions');
 
 
 ko.components.register('success', components.successForm);
+ko.components.register('step-one', components.stepOne);
 
 function viewModel (data) {
 
-    this.userName = data.userName;
-    this.age = data.age;
+    // this.userName = data.userName;
+    // this.age = data.age;
     this.email = data.email;
-    this.step1IsValid = data.step1IsValid;
-    this.nextStep = data.nextStep;
+    // this.step1IsValid = data.step1IsValid;
+    // this.nextStep = data.nextStep;
     this.step2IsValid = data.step2IsValid;
     this.prevStep = data.prevStep;
     this.submit = data.submit;
@@ -37,8 +38,8 @@ function viewModel (data) {
         return this.step1IsValid && this.email();
     }, this);
     
-    this.next = function() {
-        this.step (this.step() + 1);
+    this.nextStep = function () {
+        this.step(this.step() + 1);
     };
 
     this.prev = function() {

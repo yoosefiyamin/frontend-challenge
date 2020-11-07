@@ -1,0 +1,19 @@
+<div>
+    <div class="row">
+    <div class="row-label">
+        <label for="name">Full Name</label>
+    </div>
+    <div class="row-input">
+        <input type="text" id="name" data-bind="textInput: userName" placeholder="Your fullname..."/>
+    </div>
+    </div>
+    <div class="row">
+    <div class="row-label">
+        <label for="age">age</label>
+    </div>
+    <div class="row-input">
+        <input type="number" id="age" name="age" placeholder="Your age ..." min="18" data-bind="textInput: age">
+    </div>
+    </div>
+    <button data-bind="click: nextStep, enable: step1IsValid" class="btn-success">Next</button>
+</div>

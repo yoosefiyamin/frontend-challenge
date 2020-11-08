@@ -4,31 +4,16 @@ var template = require('./app.html');
 
 function AppViewModel() {
 
-    this.newsletterTypes = [
-        'daily',
-        'weekly',
-        'monthly'
-    ];
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     var me = this;
+    var data = {};
 
-    this.step = ko.observable(1);
-    this.userName = ko.observable('');
-    this.age = ko.observable('');
-    this.email = ko.observable('')
-    this.newsletter = ko.observable(this.newsletterTypes[0]);
+    me.step = ko.observable(1);
+    me.message = ko.observable('');
 
 
-    this.step1IsValid = ko.computed(function () {
-        return (this.userName() && this.age());
-    }, this);
-
-
-    this.step2IsValid = ko.computed(function () {
-        return this.step1IsValid && this.email() && re.test(this.email().toLowerCase());
-    }, this);
-
-    me.nextStep = function () {
+    me.nextStep = function (userName, age) {
+        data.userName = userName;
+        data.age = age;
         me.step(me.step() + 1);
     };
 
@@ -36,19 +21,15 @@ function AppViewModel() {
         me.step(me.step() - 1);
     };
 
-    this.submit = function () {
-        var data = {
-            name: me.userName(),
-            age: me.age(),
-            email: me.email(),
-            newsletter: me.newsletter()
-        };
+    this.submit = function (email, newsletter) {
+        data.email = email;
+        data.newsletter = newsletter;
 
         createUser(data).then(function (res) {
             console.log('your info', res);
-            document.getElementById('success').innerHTML = 'Thanks for filling out our form!'
+            me.message('Thanks for filling out our form!')
         }, function (error) {
-            alert('Error',error);
+            alert('Error', error);
         });
     }
 }

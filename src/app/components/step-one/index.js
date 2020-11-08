@@ -2,10 +2,16 @@ var ko = require('knockout');
 var template = require('./step-one.html');
 
 function StepOneViewModel(data) {
-    this.userName = data.userName;
-    this.age = data.age
-    this.step1IsValid = data.step1IsValid;
-    this.nextStep = data.nextStep;
+    var me = this;
+    me.userName = ko.observable('');
+    me.age = ko.observable('');
+    me.nextStep = function () {
+        data.nextStep(me.userName(), me.age());
+    };
+
+    me.step1IsValid = ko.computed(function () {
+        return (me.userName() && me.age());
+    });
 }
 
 module.exports = {

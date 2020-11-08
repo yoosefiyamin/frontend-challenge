@@ -1,11 +1,6 @@
 hellow world
 <div class="container">
-  <form id='Form'>
-    <step-one data-bind="visible: (step() == 1)" params="userName: userName, age:age,
-        step1IsValid:step1IsValid, nextStep:nextStep"></step-one>
-    <step-two data-bind="visible: (step() == 2)" params="email: email, newsletter:newsletter, 
-        prevStep:prevStep, newsletterTypes:newsletterTypes,step2IsValid:step2IsValid,
-        submit: submit"></step-two>
-    <success></success>
-  </form>
+  <step-one data-bind="visible: (step() == 1)" params="nextStep:nextStep"></step-one>
+  <step-two data-bind="visible: (step() == 2)" params="prevStep:prevStep, submit:submit"></step-two>
+  <div data-bind="text: message" class="text-success"></div>
 </div>

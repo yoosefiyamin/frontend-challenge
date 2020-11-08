@@ -21,7 +21,8 @@
 
 /* Clear floats after the columns */
 .row {
-
+  padding: 5px 0;
+  
   &:after {
     content: "";
     display: table;

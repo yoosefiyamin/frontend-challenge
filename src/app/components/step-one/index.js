@@ -1,6 +1,7 @@
-var template = require('./stepOne.html');
+var ko = require('knockout');
+var template = require('./step-one.html');
 
-function viewModel(data) {
+function StepOneViewModel(data) {
     this.userName = data.userName;
     this.age = data.age
     this.step1IsValid = data.step1IsValid;
@@ -8,6 +9,6 @@ function viewModel(data) {
 }
 
 module.exports = {
-    viewModel: viewModel,
+    viewModel: StepOneViewModel,
     template: template
 };

@@ -57,10 +57,12 @@ input[type=text], input[type=number], input[type=email], select, textarea {
   margin-top: 6px; }
 
 /* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both; }
+.row {
+  padding: 5px 0; }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .text-success {
   margin-top: 20px;
